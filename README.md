@@ -35,6 +35,7 @@ O **Weather App** faz parte do *Nível 1 (Iniciante)* do Hackaton, tendo como pr
 - [ ] Padronizar estilização
 - [ ] Criar versão mobile
 
+&nbsp;
 ### 🔗 Links úteis
 
 - Protótipo do Figma (*Em andamento*)

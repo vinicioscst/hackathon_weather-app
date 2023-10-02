@@ -34,7 +34,7 @@ export default function Home() {
   }, [search]);
 
   return (
-    <section className="w-full max-w-3xl min-h-screen my-0 mx-auto px-5 py-16 flex flex-col gap-10 justify-between items-center bg-transparent">
+    <section className={`w-full max-w-3xl min-h-screen my-0 mx-auto px-5 py-16 flex flex-col ${data.length !== 0 ? "gap-10" : "gap-40"} justify-center items-center bg-transparent`}>
       <section className="w-full flex flex-col gap-10">
         <Header />
         <main className="flex flex-col gap-4 w-full text-[var(--search-list-border)] font-semibold rounded-lg bg-[var(--search-list-bg)]">

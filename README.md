@@ -24,17 +24,16 @@ O **Weather App** faz parte do *Nível 1 (Iniciante)* do Hackaton, tendo como pr
 &nbsp;
 ### ✨ Features
 
+> [!NOTE]  
 > A implementação de algumas funcionalidades dependerá do tempo livre disponível até a *deadline* do Hackaton.
 
-- [ ] Protótipo do app no Figma
-- [ ] Estruturar páginas
-- [ ] Integrar WeatherAPI
-- [ ] Exibir autocomplete no input de pesquisa
-- [ ] Criar roteamento dinâmico das páginas de localização
-- [ ] Mudar estilização conforme o tempo exibido
-- [ ] Padronizar estilização
-- [ ] Criar versão mobile
+- [ ] Integração com WeatherAPI
+- [ ] Autocomplete no input de pesquisa
+- [ ] Roteamento dinâmico das páginas de localização
+- [ ] Estilização conforme o tempo exibido
+- [ ] Versão mobile
 
+&nbsp;
 ### 🔗 Links úteis
 
 - Protótipo do Figma (*Em andamento*)

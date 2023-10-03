@@ -1,22 +1,25 @@
 "use client";
+import { Footer } from "@/app/components/Footer";
+import { Header } from "@/app/components/Header";
+import { WeatherInfo } from "@/app/components/WeatherInfo";
 import { CityInfo } from "@/app/types/cities";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CityWeather({ params }: { params: { url: string } }) {
   const [city, setCity] = useState<CityInfo | null>(null);
-  const [weatherInfo, setWeatherInfo] = useState<CityInfo | null>(null);
 
-  useEffect(() => {
-    console.log(params.url);
+  useEffect(() => {    
     async function getData() {
       const res = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=64c7b530ec874c488f4233042232409&q=${params.url}`
       );
 
       if (res.ok) {
-        const cities: CityInfo = await res.json();
+        const data: CityInfo = await res.json();
 
-        setCity(cities);
+        setCity(data);
+        document.title = `${data.location.name}, ${data.location.region}, ${data.location.country} | Weather`
       }
     }
 
@@ -24,20 +27,14 @@ export default function CityWeather({ params }: { params: { url: string } }) {
   }, []);
 
   return (
-    <div>
-      <h3>{city?.location.name}</h3>
-      <p>{city?.location.region}</p>
-      <p>{city?.location.country}</p>
-      <p>{city?.location.localtime}</p>
-
-      <div>
-        {city?.current.condition.text}
-        {city?.current.condition.code}
-        <img
-          src={city?.current.condition.icon}
-          alt={city?.current.condition.text}
-        />
-      </div>
-    </div>
+    <section className="w-full max-w-3xl min-h-screen my-0 mx-auto px-5 py-16 flex flex-col gap-10 justify-center items-center bg-transparent">
+      <section className="w-full flex flex-col gap-10">
+        <Link href="/"><Header /></Link>
+        <main className="flex flex-col gap-4 w-full text-[var(--search-list-border)] font-semibold">
+          <WeatherInfo city={city}/>
+        </main>
+      </section>
+      <Footer />
+    </section>
   );
 }

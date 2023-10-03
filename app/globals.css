@@ -4,8 +4,10 @@
 
 :root {
   --background: #ffffff;
-  --background-degrade: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(188,244,255,1) 100%);
+  --last-degrade-color: rgba(188,244,255,1);
+  --background-degrade: linear-gradient(180deg, rgba(255,255,255,1) 0%, var(--last-degrade-color) 100%);
   --font-color: #161616;
+  --font-color-50: rgb(22, 22, 22, 0.5);
   --search-list-bg: rgb(103 103 103 / 0.05);
   --search-list-border: rgb(103 103 103 / 0.50);
   --search-text: rgb(162, 169, 180);
@@ -14,8 +16,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
-    --background-degrade: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(3,20,34,1) 100%);
+    --last-degrade-color: rgba(3,20,34,1);
+    --background-degrade: linear-gradient(180deg, rgba(0,0,0,1) 0%, var(--last-degrade-color) 100%);
     --font-color: #f6f6f6;
+    --font-color-50: rgb(246, 246, 246, 0.5);
     --search-list-bg: rgb(250 250 250 / 0.05);
     --search-list-border: rgb(250 250 250 / 0.50);
     --search-text: rgb(155, 162, 174);
@@ -28,4 +32,19 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--font-color)
+}
+
+input:checked+label {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--font-color);
+  color: var(--last-degrade-color);
+  transition: all 0.2s;
+}
+
+input:hover+label:not(:checked) {
+  cursor: pointer;
+  background-color: var(--font-color-50);
+  color: var(--last-degrade-color);
+  transition: all 0.2s;
 }

@@ -12,7 +12,7 @@ export default function CityWeather({ params }: { params: { url: string } }) {
   useEffect(() => {    
     async function getData() {
       const res = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=64c7b530ec874c488f4233042232409&q=${params.url}`
+        `https://api.weatherapi.com/v1/current.json?key=64c7b530ec874c488f4233042232409&q=${params.url}`
       );
 
       if (res.ok) {

@@ -15,7 +15,7 @@ export default function Home() {
     async function getData() {
       if (search) {
         const res = await fetch(
-          `http://api.weatherapi.com/v1/search.json?key=64c7b530ec874c488f4233042232409&q=${search}`
+          `https://api.weatherapi.com/v1/search.json?key=64c7b530ec874c488f4233042232409&q=${search}`
         );
 
         if (res.ok) {

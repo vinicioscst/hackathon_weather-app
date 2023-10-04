@@ -30,8 +30,8 @@ O **Weather App** faz parte do *Nível 1 (Iniciante)* do Hackaton, tendo como pr
 - [x] Integração com WeatherAPI
 - [x] Autocomplete no input de pesquisa
 - [x] Roteamento dinâmico das páginas de localização
-- [ ] Estilização conforme o tempo exibido
-- [ ] Versão mobile
+- [x] Estilização conforme o tempo exibido
+- [x] Versão mobile
 
 &nbsp;
 ### 🔗 Links úteis
